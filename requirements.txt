@@ -1,1 +1,2 @@
+py2neo==4.3.0
 grakn-client==1.5.4

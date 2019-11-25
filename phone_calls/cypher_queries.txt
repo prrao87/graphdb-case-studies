@@ -1,0 +1,11 @@
+Query for finding all persons who made MORE THAN 1 calls to the same person:
+--------------------------------
+MATCH (p1:Person), (p2:Person)
+WHERE size ( (p1) --> (p2) ) > 1
+WITH p1, p2, size ( (p1) --> (p2) ) AS calls
+RETURN p1, p2, calls
+
+Query for finding number of calls a specific person made to each other person they called:
+--------------------------------
+MATCH (p1:Person {personID:'+7 171 898 0853'}) -[call]- (p2:Person)
+RETURN  p1, p2, count(call) AS calls

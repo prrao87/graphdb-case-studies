@@ -7,6 +7,10 @@ uri = "bolt://localhost:7687"
 def build_graph(uri):
     # Start a Neo4j graph session and pass external data to build graph
     graph = Graph(uri, user="neo4j", password="local")
+    # Set indexes and constraints to improve query performance
+    set_indexes(graph)
+    set_constraints(graph)
+    # Build graph
     tx = graph.begin()
     for case in INPUTS:
         data = parse_input_json(case['file'])

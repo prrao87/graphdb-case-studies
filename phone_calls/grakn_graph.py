@@ -11,15 +11,15 @@ def build_graph(keyspace_name):
 
 def load_data_into_grakn(session):
     # Load in the required files and generate query transactions
-    for k, v in INPUTS.items():
-        data = parse_input_json(v['file'])
+    for case in INPUTS:
+        data = parse_input_json(case['file'])
         for item in data:
-            query = v['template'](item)
+            query = case['template'](item)
             with session.transaction().write() as transaction:
                 print(query)
                 transaction.query(query)
                 transaction.commit()
-        print("\nInserted {} items from {} into Grakn.\n".format(len(data), v['file']))
+        print(f"\nInserted {len(data)} items from {case['file']} into Grakn.\n")
 
 
 def company_template(company):
@@ -77,28 +77,24 @@ def parse_input_json(filename):
 
 
 # The filenames and methods we wish to use in this graph build operation
-INPUTS = {
-    "companies":
-        {
-            "file": "data/companies.json",
-            "template": company_template
-        },
-    "people":
-        {
-            "file": "data/people.json",
-            "template": person_template
-        },
-    "contracts":
-        {
-            "file": "data/contracts.json",
-            "template": contract_template
-        },
-    "calls":
-        {
-            "file": "data/calls.json",
-            "template": call_template
-        },
-}
+INPUTS = [
+    {
+        "file": "data/companies.json",
+        "template": company_template
+    },
+    {
+        "file": "data/people.json",
+        "template": person_template
+    },
+    {
+        "file": "data/contracts.json",
+        "template": contract_template
+    },
+    {
+        "file": "data/calls.json",
+        "template": call_template
+    },
+]
 
 if __name__ == "__main__":
     build_graph(keyspace_name="phone_calls")

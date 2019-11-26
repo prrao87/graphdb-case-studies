@@ -43,6 +43,10 @@ def person_template(person):
             , has city "{person['city']}"
             , has age {str(person['age'])}
         '''
+    else:
+        person_query += '''
+            , has is-customer false
+        '''
     person_query += ';'
     return person_query
 

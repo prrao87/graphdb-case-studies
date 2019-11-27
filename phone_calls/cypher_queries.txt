@@ -1,3 +1,65 @@
+Example Cypher queries to answer questions as per the Grakn example:
+https://dev.grakn.ai/docs/examples/phone-calls-queries
+
+1) Since September 14th, which customers called person +86 921 547 9004 ?
+--------------------------------
+MATCH (callee:Person {personID:'+86 921 547 9004'}) <-[r]- (caller:Person)
+WHERE r.started_at > datetime("2018-09-14T17:18:49")
+WITH DISTINCT caller AS callers, callee
+RETURN callee.personID, callers.personID
+
+
+2) Who are the people who have received a call from a London customer 
+aged over 50 who has previously called someone aged under 20?
+--------------------------------
+MATCH (c:Company {name:"Telecom"}) <-[:HAS_CONTRACT]- (suspect:Person {city:'London'}) -[r1]-> (:Person)
+WHERE suspect.age > 50
+WITH suspect, r1.started_at AS patternDate
+MATCH (target:Person) <-[r2]- (suspect)
+WHERE target.age < 20 AND r2.started_at > patternDate
+RETURN DISTINCT target.personID
+
+
+3) Who are the common contacts of customers '+7 171 898 0853' and '+370 351 224 5176'?
+--------------------------------
+MATCH (p1:Person {personID:'+7 171 898 0853'}) -[:HAS_CONTRACT]-> (c:Company {name:"Telecom"})
+MATCH (p2:Person {personID:'+370 351 224 5176'}) -[:HAS_CONTRACT]-> (c)
+MATCH (p1) --> (contact:Person) <-- (p2)
+RETURN DISTINCT contact.personID AS commonContacts
+
+
+4) Who are the customers who 1) have all called each other AND 2) have all 
+called person '+48 894 777 5173' at least once?
+--------------------------------
+MATCH (poi:Person {personID:'+48 894 777 5173'})
+MATCH (c:Company {name:"Telecom"}) <-- (p:Person) --> (poi)
+WITH collect(p) AS callers
+UNWIND callers AS caller
+UNWIND callers AS callee
+WITH *
+MATCH (caller) -- (callee)
+RETURN DISTINCT caller.personID AS callers
+
+
+5) How does the average call duration among customers aged under 20 compare
+ with those aged over 40?
+--------------------------------
+Under age 20:
+
+MATCH (company:Company {name:"Telecom"}) <-[:HAS_CONTRACT]- (customer) -[called]-> (p:Person)
+WHERE customer.age < 20 AND EXISTS (called.call_duration)
+RETURN avg(called.call_duration) AS avgDuration
+
+Above age 40:
+
+MATCH (company:Company {name:"Telecom"}) <-[:HAS_CONTRACT]- (customer:Person) -[called]-> (p:Person)
+WHERE customer.age > 40 AND EXISTS (called.call_duration)
+RETURN avg(called.call_duration) AS avgDuration
+
+
+
+ADDITIONAL QUERIES:
+
 Query for finding all persons who made MORE THAN 1 calls to the same person:
 --------------------------------
 MATCH (p1:Person), (p2:Person)
@@ -27,7 +89,7 @@ RETURN p1, p2, count(r) as calls
 Query for finding the calls (and number of calls) made by a specific person within a date range:
 --------------------------------
 MATCH (p1:Person) -[r:CALL_2018_09_19]- (p2:Person)
-RETURN p1, p2, count(r) as calls
+WITH p1, p2, count(r) as calls
 MATCH (p1:Person {personID:'+86 921 547 9004'}) <-[r]- (p2:Person)
 WHERE r.date > date("2018-09-21") AND r.date < date("2018-09-26")
 RETURN p1, p2, r.date, count(r) as calls

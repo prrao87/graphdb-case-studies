@@ -77,11 +77,10 @@ def call_template(data):
         UNWIND $data AS d
         MERGE (p1:Person {personID: d.caller_id})
         MERGE (p2:Person {personID: d.callee_id})
-        WITH p1, p2, d, toUpper(replace(split(d.started_at, 'T')[0], '-', '_')) AS rel_type,
-             split(d.started_at, 'T')[0] AS date_called, split(d.started_at, 'T')[1] AS time_called
+        WITH p1, p2, d, toUpper(replace(split(d.started_at, 'T')[0], '-', '_')) AS rel_type
           CALL apoc.merge.relationship(p1, 'CALL_' + rel_type,
-               {started_at: time(time_called), call_duration: d.duration, date: date(date_called)}, NULL, p2,
-               {started_at: time(time_called), call_duration: d.duration, date: date(date_called)}
+               {started_at: datetime(d.started_at), call_duration: d.duration}, NULL, p2,
+               {started_at: datetime(d.started_at), call_duration: d.duration}
           )
           YIELD rel
         RETURN d

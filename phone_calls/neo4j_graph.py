@@ -4,7 +4,7 @@ from py2neo import Graph
 uri = "bolt://localhost:7687"
 
 
-def build_graph(uri):
+def build_graph():
     # Start a Neo4j graph session and pass external data to build graph
     graph = Graph(uri, user="neo4j", password="local")
     # Set indexes and constraints to improve query performance
@@ -116,4 +116,4 @@ INPUTS = [
 ]
 
 if __name__ == "__main__":
-    build_graph(uri)
+    build_graph()

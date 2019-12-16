@@ -1,0 +1,1000 @@
+1,33,Pune,India
+2,61,Hong Kong,China
+3,30,Tianjin,China
+4,46,Chennai,India
+5,40,Xian,China
+6,53,Shantou,China
+7,21,Moscow,Russian Federation
+8,60,Alexandria,Egypt
+9,39,Foshan,China
+10,42,Kolkata,India
+11,41,Zhengzhou,China
+12,49,Suzhou,China
+13,26,Hong Kong,China
+14,58,Jaipur,India
+15,21,Pyongyang,North Korea
+16,30,Tianjin,China
+17,42,Rio de Janeiro,Brazil
+18,64,Hyderabad,India
+19,30,Saint Petersburg,Russian Federation
+20,44,Zhongshan,China
+21,35,Shanghai,China
+22,42,Shenzhen,China
+23,44,Guangzhou,China
+24,37,Shenyang,China
+25,42,Zhengzhou,China
+26,28,Wenzhou,China
+27,53,Bangalore,India
+28,20,Nanjing,China
+29,46,Sao Paulo,Brazil
+30,53,Ekurhuleni,South Africa
+31,52,Surat,India
+32,43,Tianjin,China
+33,21,Shenyang,China
+34,49,Rio de Janeiro,Brazil
+35,25,Shanghai,China
+36,32,Busan,South Korea
+37,32,Suzhou,China
+38,19,Chongqing,China
+39,60,Zhengzhou,China
+40,37,Ningbo,China
+41,38,Chongqing,China
+42,35,Hong Kong,China
+43,53,Bangalore,India
+44,29,Hangzhou,China
+45,33,Zhongshan,China
+46,54,Hefei,China
+47,22,Kolkata,India
+48,46,Hong Kong,China
+49,63,Saint Petersburg,Russian Federation
+50,38,Shanghai,China
+51,42,Shantou,China
+52,31,Ningbo,China
+53,61,Ekurhuleni,South Africa
+54,47,Pune,India
+55,39,Wenzhou,China
+56,42,Chennai,India
+57,24,Wenzhou,China
+58,44,Chennai,India
+59,52,Bangalore,India
+60,65,Nanjing,China
+61,54,Hong Kong,China
+62,49,Harbin,China
+63,33,Suzhou,China
+64,18,Durban,South Africa
+65,49,Bangalore,India
+66,65,Shantou,China
+67,32,Ningbo,China
+68,19,Tianjin,China
+69,25,Shanghai,China
+70,34,Xian,China
+71,57,Pune,India
+72,43,Buenos Aires,Argentina
+73,60,Xiamen,China
+74,54,Zhongshan,China
+75,39,Chennai,India
+76,18,Ningbo,China
+77,63,Wenzhou,China
+78,47,Beijing,China
+79,60,Shantou,China
+80,25,Hong Kong,China
+81,22,Zhengzhou,China
+82,65,Nanjing,China
+83,51,Lima,Peru
+84,41,Shenzhen,China
+85,43,Ningbo,China
+86,54,Wenzhou,China
+87,65,Zhengzhou,China
+88,52,Tehran,Iran
+89,54,Guangzhou,China
+90,59,Delhi,India
+91,41,Ahmedabad,India
+92,31,Tianjin,China
+93,49,Guangzhou,China
+94,19,Hangzhou,China
+95,25,Chengdu,China
+96,62,Shenyang,China
+97,50,Xian,China
+98,36,Hangzhou,China
+99,61,Ningbo,China
+100,51,Shenyang,China
+101,48,Hong Kong,China
+102,56,Xian,China
+103,61,Dongguan,China
+104,29,Harbin,China
+105,34,Surat,India
+106,29,Seoul,South Korea
+107,22,New Taipei City,Taiwan
+108,57,Shantou,China
+109,33,Xiamen,China
+110,30,Shantou,China
+111,27,Mumbai,India
+112,59,Nanjing,China
+113,38,Changsha,China
+114,47,Shantou,China
+115,51,Beijing,China
+116,44,Chongqing,China
+117,57,Changsha,China
+118,39,Beijing,China
+119,25,Hong Kong,China
+120,48,Chongqing,China
+121,51,Los Angeles,United States
+122,47,Shenzhen,China
+123,27,Wenzhou,China
+124,53,Zhongshan,China
+125,49,Shenyang,China
+126,18,Hyderabad,India
+127,27,Johannesburg,South Africa
+128,57,Shantou,China
+129,39,Suzhou,China
+130,33,Nanjing,China
+131,36,Cape Town,South Africa
+132,60,Guangzhou,China
+133,18,Cape Town,South Africa
+134,42,Dongguan,China
+135,26,Shanghai,China
+136,42,Shanghai,China
+137,53,Mumbai,India
+138,18,Dongguan,China
+139,40,Pune,India
+140,62,Suzhou,China
+141,49,Changsha,China
+142,31,Alexandria,Egypt
+143,49,Jaipur,India
+144,61,Mumbai,India
+145,19,Nanjing,China
+146,61,Berlin,Germany
+147,23,Tianjin,China
+148,63,Nanjing,China
+149,57,Suzhou,China
+150,41,Guangzhou,China
+151,46,Ningbo,China
+152,44,Ahmedabad,India
+153,63,Wenzhou,China
+154,52,Shenzhen,China
+155,60,Bangalore,India
+156,54,Harbin,China
+157,39,Xian,China
+158,57,Surat,India
+159,62,Harbin,China
+160,31,Nanjing,China
+161,29,Lima,Peru
+162,28,Dongguan,China
+163,45,Xian,China
+164,23,Kolkata,India
+165,27,Wenzhou,China
+166,46,Changsha,China
+167,62,Harbin,China
+168,31,Johannesburg,South Africa
+169,36,Shanghai,China
+170,56,Suzhou,China
+171,35,Xian,China
+172,39,Ningbo,China
+173,39,Bangalore,India
+174,32,Suzhou,China
+175,52,Shenyang,China
+176,24,Wuhan,China
+177,32,Ningbo,China
+178,44,Guangzhou,China
+179,45,Tianjin,China
+180,41,Kinshasa,Democratic Republic of Congo
+181,64,Dongguan,China
+182,62,Hyderabad,India
+183,60,Wuhan,China
+184,32,Shenyang,China
+185,56,Wuhan,China
+186,28,Foshan,China
+187,62,Bogota,Colombia
+188,30,Shantou,China
+189,49,Chongqing,China
+190,65,Wuhan,China
+191,30,Wenzhou,China
+192,32,Hong Kong,China
+193,60,Chongqing,China
+194,55,Pune,India
+195,65,Yokohama,Japan
+196,39,Shenzhen,China
+197,50,Beijing,China
+198,37,Hong Kong,China
+199,53,Ahmedabad,India
+200,21,Chongqing,China
+201,32,Zhongshan,China
+202,35,Guangzhou,China
+203,39,Foshan,China
+204,34,Shanghai,China
+205,32,Wuhan,China
+206,40,Chengdu,China
+207,62,Harbin,China
+208,46,Hong Kong,China
+209,59,Zhengzhou,China
+210,36,Suzhou,China
+211,29,Dongguan,China
+212,31,Xiamen,China
+213,31,Hong Kong,China
+214,47,Guangzhou,China
+215,60,Addis Ababa,Ethiopia
+216,40,Cairo,Egypt
+217,27,Hangzhou,China
+218,45,Zhongshan,China
+219,38,Changsha,China
+220,61,Shenyang,China
+221,24,Wuhan,China
+222,28,Ningbo,China
+223,38,Harbin,China
+224,49,Xian,China
+225,41,Foshan,China
+226,50,Shenzhen,China
+227,27,Ankara,Turkey
+228,41,Shenzhen,China
+229,32,Dongguan,China
+230,65,Wenzhou,China
+231,51,Foshan,China
+232,63,Hong Kong,China
+233,33,Pune,India
+234,34,Nanjing,China
+235,58,Changsha,China
+236,53,Zhongshan,China
+237,62,Shenyang,China
+238,64,Faisalabad,Pakistan
+239,57,Tianjin,China
+240,65,Beijing,China
+241,35,Wuhan,China
+242,52,Incheon,South Korea
+243,24,Guangzhou,China
+244,58,Shenzhen,China
+245,55,Guangzhou,China
+246,27,Zhengzhou,China
+247,44,Hefei,China
+248,23,Hefei,China
+249,61,Suzhou,China
+250,45,Ningbo,China
+251,46,Beijing,China
+252,28,Hefei,China
+253,26,Wuhan,China
+254,58,Hefei,China
+255,42,Bangalore,India
+256,56,Shanghai,China
+257,29,Hong Kong,China
+258,54,Foshan,China
+259,56,Beijing,China
+260,64,Shenyang,China
+261,38,Tianjin,China
+262,44,Zhengzhou,China
+263,37,Hangzhou,China
+264,21,Bangalore,India
+265,29,Guangzhou,China
+266,43,Shanghai,China
+267,64,Suzhou,China
+268,44,Xiamen,China
+269,56,Tianjin,China
+270,47,Foshan,China
+271,53,Dongguan,China
+272,35,Suzhou,China
+273,34,Zhongshan,China
+274,18,Changsha,China
+275,42,Zhengzhou,China
+276,40,Ahmedabad,India
+277,65,Seoul,South Korea
+278,33,Bogota,Colombia
+279,49,Wuhan,China
+280,35,Dhaka,Bangladesh
+281,59,Dongguan,China
+282,49,Yangon,Myanmar
+283,63,Ahmedabad,India
+284,30,Bangalore,India
+285,20,Dongguan,China
+286,53,Changsha,China
+287,33,Delhi,India
+288,44,Beijing,China
+289,48,Shanghai,China
+290,62,Tokyo,Japan
+291,25,Zhongshan,China
+292,38,Chongqing,China
+293,18,Hefei,China
+294,57,Shenyang,China
+295,41,Shanghai,China
+296,47,Changsha,China
+297,61,Tianjin,China
+298,42,Bangalore,India
+299,19,Chongqing,China
+300,63,Ningbo,China
+301,53,Xian,China
+302,39,Zhongshan,China
+303,39,Beijing,China
+304,49,Xian,China
+305,63,Shantou,China
+306,22,Zhongshan,China
+307,53,Hefei,China
+308,34,Harbin,China
+309,44,Abidjan,Ivory Coast
+310,36,Cape Town,South Africa
+311,30,Dongguan,China
+312,57,Seoul,South Korea
+313,53,Zhongshan,China
+314,40,Dongguan,China
+315,34,Harbin,China
+316,18,Xiamen,China
+317,46,Dongguan,China
+318,50,Shantou,China
+319,18,Shenyang,China
+320,57,Shenzhen,China
+321,19,Chennai,India
+322,61,Hangzhou,China
+323,23,Dongguan,China
+324,51,Changsha,China
+325,41,Casablanca,Morocco
+326,58,Ningbo,China
+327,57,Nanjing,China
+328,34,Wenzhou,China
+329,41,Zhengzhou,China
+330,43,Tianjin,China
+331,30,Hangzhou,China
+332,38,Wenzhou,China
+333,29,Suzhou,China
+334,44,Chengdu,China
+335,27,Shanghai,China
+336,32,Xian,China
+337,49,Xiamen,China
+338,22,Mumbai,India
+339,57,Chengdu,China
+340,46,Beijing,China
+341,51,Beijing,China
+342,18,Wuhan,China
+343,60,Beijing,China
+344,54,Wenzhou,China
+345,46,Tianjin,China
+346,56,Mumbai,India
+347,23,Nanjing,China
+348,25,Hyderabad,India
+349,53,Giza,Egypt
+350,24,Seoul,South Korea
+351,28,Ho Chi Minh City,Vietnam
+352,51,Hangzhou,China
+353,20,Harbin,China
+354,24,Chongqing,China
+355,25,Hong Kong,China
+356,37,Jaipur,India
+357,50,Foshan,China
+358,50,Tianjin,China
+359,21,Shantou,China
+360,28,Ningbo,China
+361,19,Harbin,China
+362,62,Ningbo,China
+363,22,Xiamen,China
+364,64,Pune,India
+365,32,Lahore,Pakistan
+366,25,Shenzhen,China
+367,33,Chongqing,China
+368,60,Ahmedabad,India
+369,59,Mumbai,India
+370,50,Shenzhen,China
+371,21,Hangzhou,China
+372,22,Chongqing,China
+373,45,Dongguan,China
+374,41,Suzhou,China
+375,49,Chongqing,China
+376,33,Bangalore,India
+377,38,Hong Kong,China
+378,24,Wuhan,China
+379,21,London,United Kingdom
+380,36,Dongguan,China
+381,51,Zhongshan,China
+382,43,Tianjin,China
+383,41,Tianjin,China
+384,33,Foshan,China
+385,61,Guangzhou,China
+386,32,Zhongshan,China
+387,59,Zhongshan,China
+388,42,Hong Kong,China
+389,35,Xiamen,China
+390,34,Shenzhen,China
+391,26,Wuhan,China
+392,19,Hangzhou,China
+393,30,Chengdu,China
+394,56,Nanjing,China
+395,60,Changsha,China
+396,59,Mumbai,India
+397,44,Shenzhen,China
+398,53,Mumbai,India
+399,18,Hong Kong,China
+400,22,Xian,China
+401,23,Alexandria,Egypt
+402,45,Xian,China
+403,34,Xiamen,China
+404,53,Shenzhen,China
+405,64,Pune,India
+406,46,Riyadh,Saudi Arabia
+407,49,Changsha,China
+408,52,Chennai,India
+409,22,Hong Kong,China
+410,30,Nanjing,China
+411,19,Tokyo,Japan
+412,46,Zhengzhou,China
+413,32,Santiago,Chile
+414,55,Guangzhou,China
+415,40,Lima,Peru
+416,43,Foshan,China
+417,59,Tianjin,China
+418,42,Hangzhou,China
+419,28,Shenyang,China
+420,27,Ningbo,China
+421,39,Hong Kong,China
+422,54,Shantou,China
+423,43,Foshan,China
+424,23,Johannesburg,South Africa
+425,29,Changsha,China
+426,23,Xian,China
+427,31,Pune,India
+428,55,Giza,Egypt
+429,52,Suzhou,China
+430,49,Mumbai,India
+431,44,Ningbo,China
+432,30,Busan,South Korea
+433,58,Pune,India
+434,63,Shantou,China
+435,58,Shantou,China
+436,33,Xian,China
+437,25,Ahmedabad,India
+438,40,Guangzhou,China
+439,49,Dongguan,China
+440,65,Harbin,China
+441,51,Suzhou,China
+442,51,Harbin,China
+443,64,Wenzhou,China
+444,27,Jaipur,India
+445,20,Chengdu,China
+446,32,Xian,China
+447,24,Lahore,Pakistan
+448,37,Chengdu,China
+449,51,Foshan,China
+450,22,Dar es Salaam,Tanzania
+451,38,Pune,India
+452,54,Wuhan,China
+453,59,Wenzhou,China
+454,21,Beijing,China
+455,34,Bangalore,India
+456,18,Suzhou,China
+457,65,Harbin,China
+458,62,Bogota,Colombia
+459,28,Tianjin,China
+460,61,Tokyo,Japan
+461,25,Suzhou,China
+462,34,Johannesburg,South Africa
+463,65,Riyadh,Saudi Arabia
+464,55,Kolkata,India
+465,64,Wenzhou,China
+466,61,Foshan,China
+467,20,Ningbo,China
+468,24,Harbin,China
+469,53,Chongqing,China
+470,22,Seoul,South Korea
+471,50,Shenzhen,China
+472,48,Wenzhou,China
+473,42,Zhongshan,China
+474,26,Xian,China
+475,25,Tianjin,China
+476,28,Shantou,China
+477,61,Suzhou,China
+478,35,Jaipur,India
+479,48,Zhengzhou,China
+480,45,Harbin,China
+481,47,Ningbo,China
+482,34,Nanjing,China
+483,38,Suzhou,China
+484,62,Ahmedabad,India
+485,55,Madrid,Spain
+486,45,Wenzhou,China
+487,32,Guangzhou,China
+488,60,Jaipur,India
+489,39,Jaipur,India
+490,31,Hyderabad,India
+491,56,Chengdu,China
+492,64,Harbin,China
+493,65,Nanjing,China
+494,33,Mumbai,India
+495,40,Chongqing,China
+496,50,Mumbai,India
+497,30,Changsha,China
+498,20,Bangalore,India
+499,36,Dongguan,China
+500,20,Hong Kong,China
+501,47,Bogota,Colombia
+502,57,Suzhou,China
+503,35,Zhengzhou,China
+504,43,Xiamen,China
+505,48,Guangzhou,China
+506,46,Berlin,Germany
+507,31,Shenzhen,China
+508,61,Changsha,China
+509,58,Wenzhou,China
+510,44,Ningbo,China
+511,34,Xian,China
+512,64,Tianjin,China
+513,45,Shenyang,China
+514,25,Wuhan,China
+515,24,Nanjing,China
+516,22,Suzhou,China
+517,47,Wuhan,China
+518,54,Xian,China
+519,32,Xian,China
+520,19,Xiamen,China
+521,65,Chengdu,China
+522,45,Chengdu,China
+523,62,Beijing,China
+524,39,Ningbo,China
+525,39,Xiamen,China
+526,37,Zhongshan,China
+527,30,Surat,India
+528,55,Los Angeles,United States
+529,23,Chongqing,China
+530,54,Jaipur,India
+531,54,Yokohama,Japan
+532,34,Chongqing,China
+533,62,Zhongshan,China
+534,42,Hyderabad,India
+535,61,Chengdu,China
+536,25,Zhengzhou,China
+537,57,Shantou,China
+538,24,Surat,India
+539,46,Shantou,China
+540,18,Zhongshan,China
+541,57,Dongguan,China
+542,45,Nanjing,China
+543,38,Suzhou,China
+544,56,Nanjing,China
+545,33,Kolkata,India
+546,40,Foshan,China
+547,46,Zhongshan,China
+548,58,Shenyang,China
+549,50,Hefei,China
+550,57,Abidjan,Ivory Coast
+551,18,Istanbul,Turkey
+552,20,Changsha,China
+553,61,Hangzhou,China
+554,35,Harbin,China
+555,23,Mumbai,India
+556,53,Harbin,China
+557,43,Shanghai,China
+558,47,Chongqing,China
+559,65,Foshan,China
+560,19,Wuhan,China
+561,21,Jaipur,India
+562,39,Hefei,China
+563,39,Zhengzhou,China
+564,28,Jaipur,India
+565,56,Hong Kong,China
+566,64,Dongguan,China
+567,65,Ahmedabad,India
+568,29,Ningbo,China
+569,31,Hangzhou,China
+570,60,Suzhou,China
+571,25,Shanghai,China
+572,46,Shenyang,China
+573,43,Harbin,China
+574,63,Chengdu,China
+575,46,Ningbo,China
+576,43,Changsha,China
+577,50,Sao Paulo,Brazil
+578,37,Beijing,China
+579,26,Pune,India
+580,48,Surat,India
+581,59,Shantou,China
+582,49,Surat,India
+583,36,Shanghai,China
+584,60,Mumbai,India
+585,18,Harbin,China
+586,44,Xian,China
+587,54,Hangzhou,China
+588,44,Yokohama,Japan
+589,62,Hangzhou,China
+590,36,Chengdu,China
+591,43,Suzhou,China
+592,65,Xian,China
+593,52,Durban,South Africa
+594,47,Xiamen,China
+595,19,Baghdad,Iraq
+596,30,Shenzhen,China
+597,55,Tianjin,China
+598,21,Pune,India
+599,46,Wuhan,China
+600,64,Zhongshan,China
+601,45,Shantou,China
+602,37,Chengdu,China
+603,36,Xiamen,China
+604,37,Shenzhen,China
+605,23,Johannesburg,South Africa
+606,41,Hangzhou,China
+607,25,Guangzhou,China
+608,27,Shenzhen,China
+609,22,Shanghai,China
+610,21,Ningbo,China
+611,31,Hefei,China
+612,37,Hangzhou,China
+613,59,Chengdu,China
+614,21,Pune,India
+615,21,Harbin,China
+616,64,Zhongshan,China
+617,36,Wuhan,China
+618,25,Mexico City,Mexico
+619,53,Wenzhou,China
+620,40,Hefei,China
+621,18,Beijing,China
+622,55,Shenzhen,China
+623,35,Xian,China
+624,28,Tianjin,China
+625,49,Shenzhen,China
+626,54,Beijing,China
+627,60,Zhongshan,China
+628,21,Hangzhou,China
+629,45,Delhi,India
+630,20,Chongqing,China
+631,51,Ahmedabad,India
+632,56,Tianjin,China
+633,45,Zhongshan,China
+634,55,Tianjin,China
+635,54,Surat,India
+636,24,Hefei,China
+637,62,Guangzhou,China
+638,59,Hangzhou,China
+639,36,Shantou,China
+640,61,Hong Kong,China
+641,56,Zhengzhou,China
+642,35,Shenzhen,China
+643,37,Zhongshan,China
+644,45,Hefei,China
+645,35,Nanjing,China
+646,32,Jaipur,India
+647,40,Chengdu,China
+648,55,Hong Kong,China
+649,60,Chengdu,China
+650,46,Beijing,China
+651,53,Xiamen,China
+652,32,Wuhan,China
+653,61,Tianjin,China
+654,26,Zhongshan,China
+655,54,Tianjin,China
+656,42,Shenyang,China
+657,24,Changsha,China
+658,18,Wenzhou,China
+659,61,Alexandria,Egypt
+660,44,Hangzhou,China
+661,43,Shenyang,China
+662,57,Foshan,China
+663,24,Nanjing,China
+664,25,Shenzhen,China
+665,21,Pune,India
+666,47,Zhongshan,China
+667,24,Changsha,China
+668,25,Foshan,China
+669,39,Tianjin,China
+670,37,Harbin,China
+671,38,Shanghai,China
+672,27,Hong Kong,China
+673,30,Tianjin,China
+674,25,Wenzhou,China
+675,26,Foshan,China
+676,45,Foshan,China
+677,44,Shanghai,China
+678,34,Chongqing,China
+679,42,Hong Kong,China
+680,58,Ningbo,China
+681,56,Hangzhou,China
+682,58,Johannesburg,South Africa
+683,52,Changsha,China
+684,43,Pune,India
+685,65,Hefei,China
+686,62,Dongguan,China
+687,40,Shenzhen,China
+688,49,Dongguan,China
+689,22,Harbin,China
+690,50,Hong Kong,China
+691,57,Hefei,China
+692,34,Zhongshan,China
+693,39,Beijing,China
+694,39,Xiamen,China
+695,31,Surat,India
+696,52,Nanjing,China
+697,31,Shantou,China
+698,65,Chengdu,China
+699,44,Surat,India
+700,44,Hefei,China
+701,48,Shenyang,China
+702,27,Pune,India
+703,59,Tianjin,China
+704,47,Wuhan,China
+705,58,Shenyang,China
+706,24,Surat,India
+707,43,Tianjin,China
+708,65,Chengdu,China
+709,40,Shantou,China
+710,65,Suzhou,China
+711,47,Mumbai,India
+712,29,Pune,India
+713,23,Cairo,Egypt
+714,59,Shanghai,China
+715,53,Wenzhou,China
+716,61,Zhengzhou,China
+717,31,Nanjing,China
+718,18,Dongguan,China
+719,35,Ekurhuleni,South Africa
+720,63,Alexandria,Egypt
+721,42,Foshan,China
+722,65,Shanghai,China
+723,39,Hong Kong,China
+724,38,Hangzhou,China
+725,61,Hangzhou,China
+726,53,Wenzhou,China
+727,20,Singapore,Singapore
+728,30,Shenzhen,China
+729,54,Tianjin,China
+730,28,New York,United States
+731,38,Guangzhou,China
+732,63,Zhengzhou,China
+733,28,Foshan,China
+734,31,Hong Kong,China
+735,23,Hangzhou,China
+736,23,Harbin,China
+737,34,Moscow,Russian Federation
+738,19,Shantou,China
+739,25,Tianjin,China
+740,32,Changsha,China
+741,21,Hefei,China
+742,59,Wenzhou,China
+743,35,Shenzhen,China
+744,54,Delhi,India
+745,60,Hefei,China
+746,27,Shantou,China
+747,36,Suzhou,China
+748,56,Wenzhou,China
+749,61,Karachi,Pakistan
+750,32,Dar es Salaam,Tanzania
+751,62,Nanjing,China
+752,57,Mumbai,India
+753,21,Jeddah,Saudi Arabia
+754,29,Harbin,China
+755,35,Shenyang,China
+756,40,Dongguan,China
+757,37,Hanoi,Vietnam
+758,20,Guangzhou,China
+759,27,Wenzhou,China
+760,37,Shenzhen,China
+761,41,Saint Petersburg,Russian Federation
+762,20,Shanghai,China
+763,62,Jeddah,Saudi Arabia
+764,49,Ekurhuleni,South Africa
+765,51,Changsha,China
+766,51,Guangzhou,China
+767,40,Nanjing,China
+768,47,Johannesburg,South Africa
+769,62,Ahmedabad,India
+770,32,Jeddah,Saudi Arabia
+771,48,Jaipur,India
+772,57,Zhongshan,China
+773,58,Shenyang,China
+774,40,Wenzhou,China
+775,19,Chengdu,China
+776,65,Changsha,China
+777,63,Xiamen,China
+778,32,Nanjing,China
+779,41,Ningbo,China
+780,58,Xian,China
+781,35,Chongqing,China
+782,24,Sao Paulo,Brazil
+783,27,Hong Kong,China
+784,36,Wuhan,China
+785,48,Chongqing,China
+786,43,Chongqing,China
+787,49,Shantou,China
+788,27,Durban,South Africa
+789,38,Guangzhou,China
+790,49,Wuhan,China
+791,45,Nanjing,China
+792,45,Nanjing,China
+793,19,Shantou,China
+794,25,Chennai,India
+795,60,Dongguan,China
+796,48,Chengdu,China
+797,31,Hangzhou,China
+798,60,Suzhou,China
+799,28,Chengdu,China
+800,46,Nanjing,China
+801,49,Hangzhou,China
+802,41,Bangkok,Thailand
+803,23,Jakarta,Indonesia
+804,56,Xiamen,China
+805,25,Chengdu,China
+806,53,Chengdu,China
+807,34,Harbin,China
+808,42,Zhengzhou,China
+809,41,Delhi,India
+810,55,Chongqing,China
+811,23,Beijing,China
+812,21,Johannesburg,South Africa
+813,48,Zhengzhou,China
+814,27,Chengdu,China
+815,30,Zhengzhou,China
+816,18,Harbin,China
+817,48,Jeddah,Saudi Arabia
+818,57,Dongguan,China
+819,22,Hong Kong,China
+820,61,Hefei,China
+821,47,Chennai,India
+822,63,Beijing,China
+823,45,Faisalabad,Pakistan
+824,43,Tianjin,China
+825,27,Kolkata,India
+826,33,Nanjing,China
+827,44,Shenyang,China
+828,49,Busan,South Korea
+829,65,Delhi,India
+830,41,Tianjin,China
+831,47,Tianjin,China
+832,52,Changsha,China
+833,61,Singapore,Singapore
+834,59,Changsha,China
+835,32,Wuhan,China
+836,40,Addis Ababa,Ethiopia
+837,26,Tianjin,China
+838,57,Hyderabad,India
+839,37,Zhongshan,China
+840,62,Hangzhou,China
+841,62,Ningbo,China
+842,21,Zhongshan,China
+843,41,Incheon,South Korea
+844,31,Wuhan,China
+845,65,Wenzhou,China
+846,39,Hangzhou,China
+847,60,Xian,China
+848,18,Lahore,Pakistan
+849,50,Shantou,China
+850,43,Guangzhou,China
+851,50,Delhi,India
+852,32,Xiamen,China
+853,38,Busan,South Korea
+854,39,Ningbo,China
+855,53,Zhongshan,China
+856,61,Guangzhou,China
+857,49,Harbin,China
+858,30,Ahmedabad,India
+859,52,Hong Kong,China
+860,37,Ahmedabad,India
+861,34,Changsha,China
+862,55,Kolkata,India
+863,62,Shanghai,China
+864,39,Chongqing,China
+865,63,Chongqing,China
+866,52,Jaipur,India
+867,54,Tehran,Iran
+868,47,Changsha,China
+869,36,Shantou,China
+870,41,Johannesburg,South Africa
+871,57,Shantou,China
+872,36,Zhongshan,China
+873,40,Wuhan,China
+874,47,Nanjing,China
+875,27,Harbin,China
+876,29,Hangzhou,China
+877,41,Changsha,China
+878,25,Chongqing,China
+879,51,Surat,India
+880,37,Wuhan,China
+881,23,Shenzhen,China
+882,26,Shanghai,China
+883,59,Shanghai,China
+884,46,Shenzhen,China
+885,20,Chengdu,China
+886,48,Baghdad,Iraq
+887,63,Surat,India
+888,65,Beijing,China
+889,41,Dongguan,China
+890,40,Beijing,China
+891,40,Guangzhou,China
+892,32,Chennai,India
+893,25,Ningbo,China
+894,33,Beijing,China
+895,56,Changsha,China
+896,48,Faisalabad,Pakistan
+897,30,Ningbo,China
+898,50,Zhengzhou,China
+899,22,Wenzhou,China
+900,47,Shenyang,China
+901,28,Shenzhen,China
+902,36,Zhengzhou,China
+903,44,Shenyang,China
+904,34,Rio de Janeiro,Brazil
+905,30,Hefei,China
+906,61,Shantou,China
+907,55,Nanjing,China
+908,18,Chongqing,China
+909,45,Tokyo,Japan
+910,30,Shenzhen,China
+911,46,Xian,China
+912,45,Surat,India
+913,61,Xian,China
+914,49,Shantou,China
+915,18,Xiamen,China
+916,65,Beijing,China
+917,32,Xian,China
+918,51,Nanjing,China
+919,21,Shenyang,China
+920,20,Shanghai,China
+921,40,Xian,China
+922,27,Shanghai,China
+923,31,Surat,India
+924,23,Suzhou,China
+925,23,Nanjing,China
+926,46,Dongguan,China
+927,30,Karachi,Pakistan
+928,29,Xian,China
+929,59,Hefei,China
+930,60,Hefei,China
+931,29,Guangzhou,China
+932,30,Surat,India
+933,41,Chongqing,China
+934,52,Nanjing,China
+935,41,Xiamen,China
+936,28,Harbin,China
+937,49,Nanjing,China
+938,62,Hangzhou,China
+939,22,Chengdu,China
+940,37,Tianjin,China
+941,47,Delhi,India
+942,44,Dongguan,China
+943,45,Wuhan,China
+944,43,Wenzhou,China
+945,39,Shenyang,China
+946,25,Nanjing,China
+947,32,Harbin,China
+948,62,Guangzhou,China
+949,26,Harbin,China
+950,42,Zhengzhou,China
+951,28,Foshan,China
+952,50,Hanoi,Vietnam
+953,43,Hong Kong,China
+954,19,Shenzhen,China
+955,22,Xiamen,China
+956,56,Xiamen,China
+957,54,Shanghai,China
+958,51,Changsha,China
+959,53,Xian,China
+960,39,Jaipur,India
+961,65,Kolkata,India
+962,35,Zhongshan,China
+963,57,Zhongshan,China
+964,39,Hangzhou,China
+965,28,Saint Petersburg,Russian Federation
+966,30,Ekurhuleni,South Africa
+967,21,Shanghai,China
+968,56,Xian,China
+969,18,Surat,India
+970,30,Guangzhou,China
+971,57,Wenzhou,China
+972,63,Shanghai,China
+973,65,Xian,China
+974,60,Ningbo,China
+975,25,Wuhan,China
+976,35,Guangzhou,China
+977,43,Ningbo,China
+978,63,Ningbo,China
+979,56,Wenzhou,China
+980,23,Hyderabad,India
+981,42,Mumbai,India
+982,60,Moscow,Russian Federation
+983,30,Chennai,India
+984,40,Xian,China
+985,61,Suzhou,China
+986,33,Wenzhou,China
+987,62,Dongguan,China
+988,63,Shenzhen,China
+989,46,Wenzhou,China
+990,34,Zhongshan,China
+991,31,Shenyang,China
+992,25,Tianjin,China
+993,33,Shenyang,China
+994,18,Jaipur,India
+995,42,Ningbo,China
+996,55,Shantou,China
+997,60,Giza,Egypt
+998,33,Shantou,China
+999,64,Nanjing,China
+1000,40,Wenzhou,China

@@ -12,17 +12,18 @@ Simply put, knowledge graphs allow us to represent highly connected data in a mo
 
 
 ## Datasets
-The following datasets are used to build the graphs using each database.
+The following datasets are used as case studies for each different graph database.
 * `phone_calls` - Dataset of persons and their phone calls, obtained from the [Grakn documentation examples](https://dev.grakn.ai/docs/examples/phone-calls-overview). 
+* `social_network` - Dataset of a simple, artificial social network that connects people and the places they live in.
 
 
 ## Neo4j
-The world's most popular graph database, [Neo4j](https://neo4j.com/) uses a *Labelled Property Graph* model to store data natively as a graph. This is done by defining "nodes" that represent an entity in the real world (such as a person or a company) and "edges" the represent how these nodes are connected to one another (for example, a person "works at" at company). The primary benefit of using a property graph model is that it is intuitive, easy to understand - it is very simple to get a Neo4j graph model up and running.
+The world's most popular graph database, [Neo4j](https://neo4j.com/) uses a *Labelled Property Graph* model to store data natively as a graph. This is done by defining "nodes" that represent an entity in the real world (such as a person or a company) and "edges" that represent how these nodes are connected to one another via triples - for example, `person-A` `-[WORKS_AT]-` `company-B`. The primary benefit of using a property graph model is that it is intuitive and easy to understand - it is very simple to get a Neo4j graph model up and running.
 
 ## Grakn
-Strictly speaking, Grakn is a "true" knowledge graph, in the sense that it models data using an *Entity-Relationship* model that makes use of multiple inheritance of hierarchies, hyper-entities, hyper-relations - allowing one to capture rich relationships in the data. Grakn can be considered to be based on a "[hypergraph model](https://blog.grakn.ai/modelling-data-with-hypergraphs-edff1e12edf0)".
+Strictly speaking, Grakn is a "true" knowledge graph, in the sense that it models data using an entity-relationship model that makes use of multiple inheritance of hierarchies, hyper-entities and hyper-relations - this is referred to as a "[*hypergraph model*](https://blog.grakn.ai/modelling-data-with-hypergraphs-edff1e12edf0)".
 
-A key feature of hypergraphs is that they generalize the notion of edges from classical graph theory to "hyper-edges" - i.e., edges are themselves made of a collection of nodes (each of which represents a relationship). This allows not only entities to be related to one another, but also *relationships to be related to other relationships*. Grakn is a schema-based database, allowing one to iteratively modify/expand the data model as the data evolves with time. In addition, thanks to its ontology layer, Grakn can make use of automated reasoning tools that utilize user-defined rules to identify *[inferred relationships](https://blog.grakn.ai/inference-made-simple-f333fd8abce4)* that were not explicitly defined in the graph structure. 
+A key feature of hypergraphs is that they generalize the notion of edges (from graph theory) to be composed of a collection of nodes (each of which represents a relationship). This allows not only entities to be related to one another, but also *relationships to be related to other relationships*. In addition, thanks to its ontology layer and schema definitions, Grakn can perform automated reasoning by utilizing user-defined rules to identify *[inferred relationships](https://blog.grakn.ai/inference-made-simple-f333fd8abce4)* that were not explicitly defined in the graph structure. 
 
 ## Installation
 

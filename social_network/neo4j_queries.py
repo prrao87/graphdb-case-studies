@@ -17,7 +17,7 @@ def run_queries():
     query4(age_lower=29, age_upper=46)
 
 
-def query1(**params):
+def query1():
     """
     Who are the top 3 most-connected persons in the network?
     """
@@ -27,12 +27,12 @@ def query1(**params):
         ORDER BY numFollowers DESC LIMIT 3
     """
     print(f"\nQuery 1:\n {query}")
-    result = graph.run(query, params)
+    result = graph.run(query)
     result = result.data()   # Consume cursor and extract result
     print(f"Result:\n{result}")
 
 
-def query2(**params):
+def query2():
     """
     In which city does the most-connected person in the network live?
     """
@@ -45,7 +45,7 @@ def query2(**params):
         RETURN person.personID AS person, size(followers) AS numFollowers, city.name AS city
     """
     print(f"\nQuery 2:\n {query}")
-    result = graph.run(query, params)
+    result = graph.run(query)
     result = result.data()   # Consume cursor and extract result
     print(f"Result:\n{result}")
 

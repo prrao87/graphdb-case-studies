@@ -1,0 +1,45 @@
+define
+
+    connection sub relation,
+        relates follower,
+        relates followee;
+
+    has-residence sub relation,
+        relates in-city,
+        relates contains-residence;
+
+    has-city sub relation,
+        relates in-country,
+        relates contains-city;
+
+    has-country sub relation,
+        relates in-region,
+        relates contains-country;
+
+    person sub entity,
+        plays follower,
+        plays followee,
+        plays in-city,
+        has age,
+        has person-id;
+
+    city sub entity,
+        plays contains-residence,
+        plays in-country,
+        has city-id,
+        has name;
+
+    country sub entity,
+        plays contains-city,
+        plays in-region,
+        has name;
+
+    region sub entity,
+        plays contains-country,
+        has name;
+
+    name sub attribute, datatype string;
+    age sub attribute, datatype long;
+    person-id sub attribute, datatype long;
+    city-id sub attribute, datatype long;
+

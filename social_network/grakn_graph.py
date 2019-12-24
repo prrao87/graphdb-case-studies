@@ -71,12 +71,34 @@ def connect_country_and_region(location):
     return query
 
 
-def city_connections(location):
-    # Insert city (unique by cityID) and its relationship with the corresponding country from the dataset
+def city_to_country(location):
+    # Insert city (unique cityID) and its relationship with the corresponding country from the dataset
     query = f'''
         match $country isa country, has name "{location['country']}";
-        insert $city isa city, has city-id {str(location['cityID'])}, has name "{location['city']}";
+        insert $city isa city, has city-id {location['cityID']}, has name "{location['city']}";
         (in-country: $city, contains-city: $country) isa has-city;
+    '''
+    return query
+
+
+def person_to_city(data):
+    # Insert person (unique personID) and their relationship with the corresponding city from the dataset
+    query = f'''
+        match $city isa city, has name "{data['city']}";
+        $country isa country, has name "{data['country']}";
+        (in-country: $city, contains-city: $country) isa has-city;
+        insert $person isa person, has person-id {data['personID']}, has age {data['age']};
+        (in-city: $person, contains-residence: $city) isa has-residence;
+    '''
+    return query
+
+
+def person_to_person(data):
+    # Insert person (unique personID) and their relationship with the corresponding connected-person from the dataset
+    query = f'''
+        match $person isa person, has person-id {data['personID']};
+        $connection isa person, has person-id {data['connectionID']};
+        insert (follower: $person, followee: $connection) isa connection;
     '''
     return query
 
@@ -98,7 +120,15 @@ LOCATION_INPUTS = [
 CONNECTION_INPUTS = [
     {
         "file": "data/city_in_region.json",
-        "query": city_connections
+        "query": city_to_country
+    },
+    {
+        "file": "data/person_in_city.json",
+        "query": person_to_city
+    },
+    {
+        "file": "data/person_connections.json",
+        "query": person_to_person
     },
 ]
 

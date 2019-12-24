@@ -35,7 +35,7 @@ def load_location_into_grakn(session):
 
         for loc in connections:
             print(f"Connected entities: {loc}")
-            query = connect_country_and_region(loc)
+            query = country_to_region(loc)
             with session.transaction().write() as transaction:
                 transaction.query(query)
                 transaction.commit()
@@ -61,7 +61,7 @@ def insert_region_and_country(location_type, location_name):
     return query
 
 
-def connect_country_and_region(location):
+def country_to_region(location):
     # Insert relationships between country and the corresponding region from the dataset
     query = f'''
         match $country isa country, has name "{location[0]}";

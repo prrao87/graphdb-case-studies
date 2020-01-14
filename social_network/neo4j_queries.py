@@ -19,11 +19,11 @@ def run_queries():
 
 def query1():
     """
-    Who are the top 3 most-connected persons in the network?
+    Who are the top 3 most-followed persons in the network?
     """
     query = """
         MATCH (follower:Person) -[:FOLLOWS]-> (person:Person)
-        RETURN person.personID AS person, size(collect(follower.personID)) AS numFollowers
+        RETURN person.personID AS personID, size(collect(follower.personID)) AS numFollowers
         ORDER BY numFollowers DESC LIMIT 3
     """
     print(f"\nQuery 1:\n {query}")
@@ -34,7 +34,7 @@ def query1():
 
 def query2():
     """
-    In which city does the most-connected person in the network live?
+    In which city does the most-followed person in the network live?
     """
     query = """
         MATCH (follower:Person) -[:FOLLOWS]-> (person:Person)

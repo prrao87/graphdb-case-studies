@@ -13,10 +13,10 @@ def run_queries():
             with session.transaction().write() as transaction:
                 # Run required queries for inference
                 _ = query1(transaction)
-                query2(transaction)
-                # query3(transaction, region='East Asia')
-                # query3(transaction, region='Latin America')
-                # query4(transaction, age_lower=29, age_upper=46)
+                _ = query2(transaction)
+                _ = query3(transaction, region='East Asia')
+                _ = query3(transaction, region='Latin America')
+                # _ = query4(transaction, age_lower=29, age_upper=46)
 
 
 def query1(transaction):
@@ -71,15 +71,38 @@ def query2(transaction):
     print(f"\nQuery 2 (Obtain city in which most-followed person lives):\n {city_query}")
     iterator = transaction.query(city_query)
     answer = iterator.collect_concepts()[0]
-    city = next(answer.attributes()).value()
-    print(f"City in which most-followed person lives:\n{city}")
+    result = next(answer.attributes()).value()
+    print(f"City in which most-followed person lives:\n{result}")
+
+    return result
 
 
-def query3(**params):
+def query3(transaction, **params):
     """
     Which are the top 5 cities in a particular region of the world with the lowest average age in the network?
     """
-    pass
+    query = f'''
+        match $person isa person, has age $age;
+        $region isa region, has name "{params['region']}";
+        $city isa city, has name $city-name;
+        (contains-country: $region, in-region: $country) isa has-country;
+        (contains-city: $country, in-country: $city) isa has-city;
+        (contains-residence: $city, in-city: $person) isa has-residence;
+        get $age, $city-name; group $city-name; mean $age;
+    '''
+    print(f"\nQuery 3:\n {query}")
+    iterator = transaction.query(query)
+    result = []
+
+    for item in list(iterator):
+        mean_age = item.answers()[0].number()   # Retrieve the number contained in this Value instance
+        city = item.owner().value()   # Retrieve the value contained in this Attribute instance
+        result.append({'city': city, 'averageAge': mean_age})
+
+    sorted_results = sorted(result, key=lambda x: x['averageAge'])
+    print(f"\n{sorted_results[:5]}")
+
+    return sorted_results
 
 
 def query4(**params):

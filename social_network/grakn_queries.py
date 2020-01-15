@@ -12,10 +12,10 @@ def run_queries():
         with client.session(keyspace=keyspace_name) as session:
             with session.transaction().write() as transaction:
                 # Run required queries for inference
-                _ = query1(transaction)
+                # _ = query1(transaction)
                 _ = query2(transaction)
-                _ = query3(transaction, region='East Asia')
-                _ = query3(transaction, region='Latin America')
+                # _ = query3(transaction, region='East Asia')
+                # _ = query3(transaction, region='Latin America')
                 # _ = query4(transaction, age_lower=29, age_upper=46)
 
 
@@ -66,11 +66,11 @@ def query2(transaction):
     city_query = f'''
         match $person isa person, has person-id {top_1_followed};
         $residence(contains-residence: $city, in-city: $person) isa has-residence;
-        get $city;
+        get;
     '''
     print(f"\nQuery 2 (Obtain city in which most-followed person lives):\n {city_query}")
     iterator = transaction.query(city_query)
-    answer = iterator.collect_concepts()[0]
+    answer = [ans.get('city') for ans in iterator][0]
     result = next(answer.attributes()).value()
     print(f"City in which most-followed person lives:\n{result}")
 

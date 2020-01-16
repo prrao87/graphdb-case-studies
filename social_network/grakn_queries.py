@@ -12,10 +12,10 @@ def run_queries():
         with client.session(keyspace=keyspace_name) as session:
             with session.transaction().write() as transaction:
                 # Run required queries for inference
-                # _ = query1(transaction)
-                # _ = query2(transaction)
-                # _ = query3(transaction, region='East Asia')
-                # _ = query3(transaction, region='Latin America')
+                _ = query1(transaction)
+                _ = query2(transaction)
+                _ = query3(transaction, region='East Asia')
+                _ = query3(transaction, region='Latin America')
                 _ = query4(transaction, age_lower=29, age_upper=46)
 
 
@@ -32,15 +32,17 @@ def query1(transaction):
     iterator = transaction.query(query)
     # To obtain the result for the "count" query, we need to look up the grakn python-client
     # source code: https://github.com/graknlabs/client-python/tree/master/grakn/service/Session
+    # The object hierarchy needs to be looked up from the source code
     result = []
 
     for item in list(iterator):  # Consume ResponseIterator into a list
 
-        # Obtain a Value object from AnswerGroup object
-        counts = item.answers()[0].number()   # Retrieve the number contained in this Value instance
+        # Convert AnswerGroup object --> Value and apply the number() method of this instance
+        counts = item.answers()[0].number()
 
-        # Obtain Entity objects from AnswerGroup object
-        person = next(item.owner().attributes()).value()   # Retrieve the value contained in this Attribute instance
+        # Apply the owner() method of AnswerGroup object to identify parent concepts
+        # This returns an Attribute instance, on which we apply the value() method
+        person = next(item.owner().attributes()).value()
         result.append({'personID': person, 'numFollowers': counts})
 
     sorted_results = sorted(result, key=lambda x: x['numFollowers'], reverse=True)

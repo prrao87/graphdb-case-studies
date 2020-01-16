@@ -13,10 +13,10 @@ def run_queries():
             with session.transaction().write() as transaction:
                 # Run required queries for inference
                 # _ = query1(transaction)
-                _ = query2(transaction)
+                # _ = query2(transaction)
                 # _ = query3(transaction, region='East Asia')
                 # _ = query3(transaction, region='Latin America')
-                # _ = query4(transaction, age_lower=29, age_upper=46)
+                _ = query4(transaction, age_lower=29, age_upper=46)
 
 
 def query1(transaction):
@@ -100,16 +100,36 @@ def query3(transaction, **params):
         result.append({'city': city, 'averageAge': mean_age})
 
     sorted_results = sorted(result, key=lambda x: x['averageAge'])
-    print(f"\n{sorted_results[:5]}")
+    print(f"5 countries with lowest average age in {params['region']}:\n{sorted_results[:5]}")
 
     return sorted_results
 
 
-def query4(**params):
+def query4(transaction, **params):
     """
     Which 3 countries in the network have the most people within a specified age range?
     """
-    pass
+    query = f'''
+        match $person isa person,
+          has age > {params['age_lower']}, has age < {params['age_upper']};
+        $country isa country, has name $country-name;
+        (contains-city: $country, in-country: $city) isa has-city;
+        (contains-residence: $city, in-city: $person) isa has-residence;
+        get; group $country-name; count;
+    '''
+    print(f"\nQuery 4:\n {query}")
+    iterator = transaction.query(query)
+    result = []
+
+    for item in list(iterator):  # Consume ResponseIterator into a list
+        counts = item.answers()[0].number()
+        country = item.owner().value()
+        result.append({'country': country, 'personCounts': counts})
+
+    sorted_results = sorted(result, key=lambda x: x['personCounts'], reverse=True)
+    print(f"3 Countries with the most people with age > {params['age_lower']} and < {params['age_upper']}:  \
+          \n{sorted_results[:3]}")
+    return sorted_results
 
 
 if __name__ == "__main__":

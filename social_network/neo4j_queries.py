@@ -29,7 +29,7 @@ def query1():
     print(f"\nQuery 1:\n {query}")
     result = graph.run(query)
     result = result.data()   # Consume cursor and extract result
-    print(f"Result:\n{result}")
+    print(f"Top 3 most-followed persons:\n{result}")
 
 
 def query2():
@@ -47,7 +47,7 @@ def query2():
     print(f"\nQuery 2:\n {query}")
     result = graph.run(query)
     result = result.data()   # Consume cursor and extract result
-    print(f"Result:\n{result}")
+    print(f"City in which most-followed person lives:\n{result}")
 
 
 def query3(**params):
@@ -62,7 +62,7 @@ def query3(**params):
     print(f"\nQuery 3:\n {query}")
     result = graph.run(query, params)
     result = result.data()   # Consume cursor and extract result
-    print(f"Result:\n{result}")
+    print(f"5 countries with lowest average age in {params['region']}:\n{result}")
 
 
 def query4(**params):
@@ -81,7 +81,8 @@ def query4(**params):
     print(f"\nQuery 4:\n {query}")
     result = graph.run(query, params)
     result = result.data()   # Consume cursor and extract result
-    print(f"Result:\n{result}")
+    print(f"3 Countries with the most people with age > {params['age_lower']} and < {params['age_upper']}:  \
+          \n{result}")
 
 
 if __name__ == "__main__":

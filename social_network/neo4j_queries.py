@@ -1,6 +1,7 @@
 """
 Run custom Cypher queries on Neo4j graph to answer questions based on business case.
 """
+from time import time
 from neo4j import GraphDatabase, BoltDriver
 
 
@@ -70,12 +71,14 @@ def query4(driver: BoltDriver, **params) -> None:
 
 
 def main() -> None:
+    start_time = time()
     driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "12345"))
     query1(driver)
     query2(driver)
     query3(driver, region="East Asia")
     query3(driver, region="Latin America")
     query4(driver, age_lower=29, age_upper=46)
+    print(f"Ran queries in {time() - start_time:.2f} seconds")
 
 
 if __name__ == "__main__":

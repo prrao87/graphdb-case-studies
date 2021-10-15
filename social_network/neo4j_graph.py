@@ -1,106 +1,113 @@
+"""
+Use the Neo4j official Python bolt driver to populate a Neo4j graph
+"""
 import json
-from py2neo import Graph
-
-uri = "bolt://localhost:7687"
-
-
-def build_graph():
-    # Start a Neo4j graph session and pass external data to build graph
-    graph = Graph(uri, user="neo4j", password="local")
-    # Set indexes and constraints to improve query performance
-    set_indexes(graph)
-    set_constraints(graph)
-    # Build graph
-    tx = graph.begin()
-    for case in INPUTS:
-        data = parse_input_json(case['file'])
-        query = case['query'](data)
-        if query:
-            tx.run(query, {"data": data})
-            tx.commit()
-            print(f"Generated nodes/relationships using data from {case['file']}")
-        tx = graph.begin()
+from neo4j import GraphDatabase
+from neo4j.work.transaction import Transaction
+from typing import Dict
 
 
-def set_indexes(graph):
-    # Create indexes on specific node properties to improve performance
-    indexes = [
-        "CREATE INDEX ON :City(cityID)",
-        "CREATE INDEX ON :Country(name)",
-        "CREATE INDEX ON :Region(name)",
-    ]
-    for index in indexes:
-        graph.evaluate(index)
+class Neo4jConnection:
+    def __init__(
+        self, uri: str, user: str, password: str, filenames: Dict[str, str]
+    ) -> None:
+        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        self.filenames = filenames
 
+    def close(self) -> None:
+        self.driver.close()
 
-def set_constraints(graph):
-    # Set uniqueness constraints on key properties
-    constraints = [
-        "CREATE CONSTRAINT ON (p:Person) ASSERT p.personID IS UNIQUE",
-    ]
-    for constraint in constraints:
-        graph.evaluate(constraint)
+    def run(self) -> None:
+        with self.driver.session() as session:
+            session.write_transaction(self._create_indexes_and_constraints)
+            session.write_transaction(
+                self._create_locations, self.filenames["locations"]
+            )
+            session.write_transaction(
+                self._create_person_to_city, self.filenames["person_to_city"]
+            )
+            session.write_transaction(
+                self._create_person_to_person, self.filenames["person_to_person"]
+            )
 
+    @staticmethod
+    def _create_indexes_and_constraints(tx: Transaction) -> None:
+        "Set indexes to improve performance of adding nodes as the graph gets larger"
+        index_queries = [
+            # indexes
+            "CREATE INDEX city_id IF NOT EXISTS FOR (city:City) ON (city.cityID) ",
+            "CREATE INDEX country_name IF NOT EXISTS FOR (country:Country) ON (country.name) ",
+            "CREATE INDEX region_name IF NOT EXISTS FOR (region:Region) ON (region.name) ",
+            # constraints
+            "CREATE CONSTRAINT IF NOT EXISTS ON (p:Person) ASSERT p.personID IS UNIQUE",
+        ]
+        for query in index_queries:
+            tx.run(query)
 
-def location_query(data):
-    # Query to create city and region nodes/relationships
-    query = """
-        UNWIND $data AS d
-        MERGE (c:City {cityID: d.cityID})
-          SET c.name = d.city, c.country = d.country, c.region = d.region
-        MERGE (co:Country {name: d.country})
-        MERGE (re:Region {name: d.region})
-        MERGE (c) -[:A_CITY_IN]-> (co)
-        MERGE (co) -[:A_COUNTRY_IN]-> (re)
-    """
-    return query
+    @staticmethod
+    def _create_locations(tx: Transaction, filename: str) -> None:
+        data = parse_input_json(filename)
+        tx.run(
+            """
+            UNWIND $data AS d
+            MERGE (c:City {cityID: d.cityID})
+            SET c.name = d.city, c.country = d.country, c.region = d.region
+            MERGE (co:Country {name: d.country})
+            MERGE (re:Region {name: d.region})
+            MERGE (c) -[:A_CITY_IN]-> (co)
+            MERGE (co) -[:A_COUNTRY_IN]-> (re)
+            """,
+            data=data,
+        )
 
+    @staticmethod
+    def _create_person_to_city(tx: Transaction, filename: str) -> None:
+        data = parse_input_json(filename)
+        tx.run(
+            """
+            UNWIND $data AS d
+            MATCH (city:City {name: d.city, country: d.country})
+            MERGE (p:Person {personID: d.personID})
+            SET p.age = d.age
+            MERGE (p) -[:LIVES_IN]-> (city)
+            """,
+            data=data,
+        )
 
-def person_query(data):
-    # Query to create person nodes and person-city relationships
-    query = """
-        UNWIND $data AS d
-        MATCH (city:City {name: d.city, country: d.country})
-        MERGE (p:Person {personID: d.personID})
-          SET p.age = d.age
-        MERGE (p) -[:LIVES_IN]-> (city)
-    """
-    return query
-
-
-def connection_query(data):
-    # Query to create person-person relationships
-    query = """
-        UNWIND $data AS d
-        MATCH (p1:Person {personID: d.personID})
-        MATCH (p2:Person {personID: d.connectionID})
-        MERGE (p1) -[:FOLLOWS]-> (p2)
-    """
-    return query
+    @staticmethod
+    def _create_person_to_person(tx: Transaction, filename: str) -> None:
+        data = parse_input_json(filename)
+        tx.run(
+            """
+            UNWIND $data AS d
+            MATCH (p1:Person {personID: d.personID})
+            MATCH (p2:Person {personID: d.connectionID})
+            MERGE (p1) -[:FOLLOWS]-> (p2)
+            """,
+            data=data,
+        )
 
 
 def parse_input_json(filename):
-    # Return JSON data
     with open(filename) as f:
         data = json.load(f)
     return data
 
 
-# The filenames and methods we wish to use in this graph build operation
-INPUTS = [
-    {
-        "file": "data/city_in_region.json",
-        "query": location_query
-    },
-    {
-        "file": "data/person_in_city.json",
-        "query": person_query
-    },
-    {
-        "file": "data/person_connections.json",
-        "query": connection_query
-    },
-]
-
 if __name__ == "__main__":
-    build_graph()
+    filenames = {
+        "locations": "data/city_in_region.json",
+        "person_to_city": "data/person_in_city.json",
+        "person_to_person": "data/person_connections.json",
+    }
+    # Start connection and run build queries
+    connection = Neo4jConnection(
+        uri="bolt://localhost:7687",
+        user="neo4j",
+        password="12345",
+        filenames=filenames,
+    )
+    print("Building graph...")
+    connection.run()
+    connection.close()
+    print("Finished! Successfully imported data into Neo4j!")
